@@ -1,1 +1,2 @@
 # cd-ci-project-pipeline
+## Github Actions Badge: ![Python application test with Github Actions](https://github.com/crisroddev/cd-ci-project-pipeline/workflows/Python+application+test+with+Github+Actions/badge.svg)
