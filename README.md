@@ -6,49 +6,63 @@
 
 # Overview
 
-<TODO: complete this with an overview of your project>
-
-## Project Plan
-<TODO: Project Plan
-
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+- Create Github Repo
+- Create Cloud Shell environment
+- Clone Github repo on cloud shell
+- Add Github Actions to the repo
+- Create Azure Pipeline
 
 ## Instructions
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
-
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
 * Project running on Azure App Service
+- `az webapp up -n projectName`
+![Alt text](screenshots/app-services.png?raw=true "AppServices")
 
 * Project cloned into Azure Cloud Shell
+- `git clone git@github.com:crisroddev/cd-ci-project-pipeline.git`
+![Alt text](screenshots/clone-repo-cloud-shell.png?raw=true "Clone Repo")
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
+- `make all`
+![Alt text](screenshots/make-all-tests-passed.png?raw=true "Make All")
 
-* Output of a test run
-
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+* Successful deploy of the project in Azure Pipelines.
+- Login `https://dev.azure.com/`
+- Create new pipeline
+- Add code to use make lint
+`
+- script: |
+        python -m venv antenv
+        source antenv/bin/activate
+        make install
+        make lint
+        make test
+      workingDirectory: $(projectRoot)
+      displayName: "Run Lint Tests"
+`
 
 * Running Azure App Service from Azure Pipelines automatic deployment
 
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
+
+* Successful prediction from deployed flask app in Azure Cloud Shell.
+![Alt text](screenshots/azure-pipelines.png?raw=true "Azure Pipelines")
 
 ```bash
 udacity@Azure:~$ ./make_predict_azure_app.sh
 Port: 443
 {"prediction":[20.35373177134412]}
 ```
+![Alt text](screenshots/make-predictions.png?raw=true "Prediction")
 
 * Output of streamed log files from deployed application
+`https://udacityproject.scm.azurewebsites.net/api/logs/docker`
 
-> 
+![Alt text](screenshots/log-files.png?raw=true "Logs1")
 
-## Enhancements
+`az webapp log tail`
 
-<TODO: A short description of how to improve the project in the future>
+![Alt text](screenshots/log-files-2.png?raw=true "Logs2")
+![Alt text](screenshots/log-files-3.png?raw=true "Logs3")
 
 ## Demo 
 
