@@ -1,5 +1,5 @@
 # cd-ci-project-pipeline
-![Python application test with Github Actions](https://github.com/crisroddev/cd-ci-project-pipeline/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
+![Python application test with Github Actions](https://github.com/crodriguez85/udacity-azure-cd-ci/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
 
 ## Screen Shot Test Passing on Github Actions
 ![Alt text](screenshots/github-actions-test-passed.png?raw=true "Github Actions Test Passed")
@@ -12,6 +12,12 @@
 - Add Github Actions to the repo
 - Create Azure Pipeline
 
+## Project Arquitecture
+![Alt text](screenshots/arq.png?raw=true "CD/CI Arquitecture")
+
+## Project Plan
+* [Link Project Plan Google Sheets](https://docs.google.com/spreadsheets/d/1i-65rF7W7J3e0yg0FJB9fBvrFL1WQMbj2DClCh8Gq7Y/edit?usp=sharing).
+* [Link Project Plan Trello Board](https://trello.com/b/yPZ9DsMa/udacity-cd-ci-pipeline).
 ## Instructions
 
 * Project running on Azure App Service
@@ -63,6 +69,14 @@ Port: 443
 
 ![Alt text](screenshots/log-files-2.png?raw=true "Logs2")
 ![Alt text](screenshots/log-files-3.png?raw=true "Logs3")
+
+## Locust
+![Alt text](screenshots/locust.png?raw=true "Logs2")
+
+## Enhancements
+How I would improve the project:
+- Have an Stage and Production environment
+- When stage its OK passes everything then you make the commit to production with a reviewer that accepts the new commit
 
 ## Demo 
 * Link to Project Demo
